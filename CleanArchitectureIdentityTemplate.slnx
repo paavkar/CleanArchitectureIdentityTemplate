@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="CleanArchitectureIdentityTemplate.Application/CleanArchitectureIdentityTemplate.Application.csproj" />
+  <Project Path="CleanArchitectureIdentityTemplate.Domain/CleanArchitectureIdentityTemplate.Domain.csproj" />
+  <Project Path="CleanArchitectureIdentityTemplate.Infrastructure/CleanArchitectureIdentityTemplate.Infrastructure.csproj" />
+  <Project Path="CleanArchitectureIdentityTemplate/CleanArchitectureIdentityTemplate.csproj" />
+</Solution>

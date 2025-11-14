@@ -1,0 +1,11 @@
+{
+  "$schema": "http://json.schemastore.org/template",
+  "author": "Paavo Karppinen",
+  "classifications": [ "Web", "CleanArchitecture", "Identity" ],
+  "identity": "PK.CleanArchitecture.Identity",
+  "name": "Clean Architecture with Identity",
+  "shortName": "clean-identity",
+  "sourceName": "CleanArchitectureIdentityTemplate",
+  "preferNameDirectory": true,
+  "language": "C#"
+}
