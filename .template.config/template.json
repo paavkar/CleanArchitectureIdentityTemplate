@@ -7,5 +7,20 @@
   "shortName": "clean-identity",
   "sourceName": "CleanArchitectureIdentityTemplate",
   "preferNameDirectory": true,
-  "language": "C#"
+  "language": "C#",
+  "sources": [
+    {
+      "modifiers": [
+        {
+          "exclude": [
+            "**/.vs/**",
+            "**/.git/**",
+            "**/.gitignore",
+            "**/.gitattributes",
+            "**/README.md"
+          ]
+        }
+      ]
+    }
+  ]
 }

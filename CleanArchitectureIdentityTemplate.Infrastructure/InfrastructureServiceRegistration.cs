@@ -1,4 +1,6 @@
-﻿using CleanArchitectureIdentityTemplate.Infrastructure.Persistence;
+﻿using CleanArchitectureIdentityTemplate.Application.Auth;
+using CleanArchitectureIdentityTemplate.Infrastructure.Auth;
+using CleanArchitectureIdentityTemplate.Infrastructure.Persistence;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -21,6 +23,8 @@ namespace CleanArchitectureIdentityTemplate.Infrastructure
             var connectionString = configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
             services.AddDbContext<AppDbContext>(options =>
                 options.UseSqlServer(connectionString));
+
+            services.AddScoped<IAuthService, AuthService>();
 
             return services;
         }
