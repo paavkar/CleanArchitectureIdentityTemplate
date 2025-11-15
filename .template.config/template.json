@@ -15,6 +15,7 @@
           "exclude": [
             "**/.vs/**",
             "**/.git/**",
+            "**/.github/**",
             "**/.gitignore",
             "**/.gitattributes",
             "**/README.md"
