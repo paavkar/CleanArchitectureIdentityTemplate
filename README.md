@@ -15,25 +15,11 @@ The authentication is done with JWT.
 
 ## Usage
 
-Example structure when done with the commands:
+You can install the template using the .nupkg file.
+Use the command
 
 ```
-Projects\
-    CleanArchitectureIdentityTemplate\
-    CleanIdentityTest\
-```
-
-First you need to clone the repository with
-
-```
-git clone https://github.com/paavkar/CleanArchitectureIdentityTemplate.git
-```
-
-When you have the solution cloned, you need to install the template with the
-command
-
-```
-dotnet new install .\CleanArchitectureIdentityTemplate\
+dotnet new install .\PK.CleanArchitecture.Identity.1.0.0.nupkg
 ```
 
 You can check that the install was successful with the command
@@ -44,15 +30,44 @@ dotnet new list
 
 You should see a new template with the name `Clean Architecture with Identity`.
 
-After which you can create new solutions with
+After which you can create new projects with the CLI
 
 ```
 dotnet new clean-identity -n CleanIdentityTest --force
 ```
-
 `-n` denotes the name for the solution (and folder). As is in the example
 a new solution of name `CleanIdentityTest` was created with this command.
 `--force` is required as the command needs to rename the namespace used.
+
+or via you IDE of choice.
+
+Using the CLI, you need to also generate a new .sln file in the project root with
+the following command
+
+```
+dotnet new sln --name CleanIdentityTest
+```
+The `--name` command takes the name of your project (in this example CleanIdentityTest).
+This creates a new .sln file which you need to migrate to .slnx file with the command
+
+```
+dotnet sln .\CleanIdentityTest.sln migrate
+```
+Again, use your project's solution name here.
+You can remove the old .sln file with
+
+`rm .\CleanIdentityTest.sln`
+
+After this, you need to add the projects to the solution. Running the command
+
+```
+dotnet sln add .\CleanIdentityTest.WebUI\CleanIdentityTest.WebUI.csproj
+```
+
+should add all the projects to the solution. Again, use your project name here
+in place of `CleanIdentityTest`.
+
+You should now have a working solution with all the projects added.
 
 ## New solution user secrets
 

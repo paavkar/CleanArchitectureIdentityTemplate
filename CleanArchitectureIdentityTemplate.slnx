@@ -1,6 +1,6 @@
 <Solution>
-  <Project Path="CleanArchitectureIdentityTemplate.Application/CleanArchitectureIdentityTemplate.Application.csproj" />
-  <Project Path="CleanArchitectureIdentityTemplate.Domain/CleanArchitectureIdentityTemplate.Domain.csproj" />
-  <Project Path="CleanArchitectureIdentityTemplate.Infrastructure/CleanArchitectureIdentityTemplate.Infrastructure.csproj" />
-  <Project Path="CleanArchitectureIdentityTemplate/CleanArchitectureIdentityTemplate.csproj" />
+  <Project Path="src/CleanArchitectureIdentityTemplate.Application/CleanArchitectureIdentityTemplate.Application.csproj" />
+  <Project Path="src/CleanArchitectureIdentityTemplate.Domain/CleanArchitectureIdentityTemplate.Domain.csproj" />
+  <Project Path="src/CleanArchitectureIdentityTemplate.Infrastructure/CleanArchitectureIdentityTemplate.Infrastructure.csproj" />
+  <Project Path="src/CleanArchitectureIdentityTemplate.WebUI/CleanArchitectureIdentityTemplate.WebUI.csproj" />
 </Solution>
