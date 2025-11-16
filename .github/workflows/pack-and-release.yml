@@ -19,7 +19,7 @@ jobs:
           dotnet-version: '10.0.x'
 
       - name: Restore dependencies
-        run: dotnet restore
+        run: dotnet restore CleanIdentityTemplate.csproj
 
       - name: Pack template
         run: dotnet pack CleanIdentityTemplate.csproj -c Release -o ./nupkgs
