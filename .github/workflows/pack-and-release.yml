@@ -31,6 +31,6 @@ jobs:
           name: "Latest build from main"
           files: ./nupkgs/*.nupkg
           draft: false
-          prerelease: true
+          prerelease: false
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
