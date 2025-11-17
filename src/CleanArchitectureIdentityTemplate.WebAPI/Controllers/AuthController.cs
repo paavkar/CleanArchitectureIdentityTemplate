@@ -4,7 +4,7 @@ using CleanArchitectureIdentityTemplate.Application.DTOs;
 using CleanArchitectureIdentityTemplate.Application.ResultModels;
 using Microsoft.AspNetCore.Mvc;
 
-namespace CleanArchitectureIdentityTemplate.WebUI.Controllers
+namespace CleanArchitectureIdentityTemplate.WebAPI.Controllers
 {
     [Route("api/v{version:apiVersion}/[controller]")]
     [ApiVersion("1.0")]

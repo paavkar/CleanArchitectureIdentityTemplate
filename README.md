@@ -61,7 +61,7 @@ You can remove the old .sln file with
 After this, you need to add the projects to the solution. Running the command
 
 ```
-dotnet sln add .\CleanIdentityTest.WebUI\CleanIdentityTest.WebUI.csproj
+dotnet sln add .\CleanIdentityTest.WebAPI\CleanIdentityTest.WebAPI.csproj
 ```
 
 should add all the projects to the solution. Again, use your project name here
@@ -69,7 +69,7 @@ in place of `CleanIdentityTest`.
 
 You should now have a working solution with all the projects added.
 
-## New solution user secrets
+## New project user secrets
 
 The program needs these values to be added to either user secrets
 or app settings:

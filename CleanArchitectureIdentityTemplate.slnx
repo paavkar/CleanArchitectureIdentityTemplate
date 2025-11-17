@@ -2,5 +2,5 @@
   <Project Path="src/CleanArchitectureIdentityTemplate.Application/CleanArchitectureIdentityTemplate.Application.csproj" />
   <Project Path="src/CleanArchitectureIdentityTemplate.Domain/CleanArchitectureIdentityTemplate.Domain.csproj" />
   <Project Path="src/CleanArchitectureIdentityTemplate.Infrastructure/CleanArchitectureIdentityTemplate.Infrastructure.csproj" />
-  <Project Path="src/CleanArchitectureIdentityTemplate.WebUI/CleanArchitectureIdentityTemplate.WebUI.csproj" />
+  <Project Path="src/CleanArchitectureIdentityTemplate.WebAPI/CleanArchitectureIdentityTemplate.WebAPI.csproj" />
 </Solution>
