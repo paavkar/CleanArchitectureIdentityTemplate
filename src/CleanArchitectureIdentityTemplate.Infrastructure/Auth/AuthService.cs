@@ -108,9 +108,9 @@ namespace CleanArchitectureIdentityTemplate.Infrastructure.Auth
 
             List<Claim> claims =
             [
-                new(ClaimTypes.NameIdentifier, user.Id),
-                new(ClaimTypes.Name, user.UserName!),
-                new(ClaimTypes.Email, user.Email!),
+                new(JwtRegisteredClaimNames.Sub, user.Id),
+                new(JwtRegisteredClaimNames.UniqueName, user.UserName!),
+                new(JwtRegisteredClaimNames.Email, user.Email!),
             ];
 
             IList<string> roles = await userManager.GetRolesAsync(user);
@@ -123,7 +123,11 @@ namespace CleanArchitectureIdentityTemplate.Infrastructure.Auth
             {
                 Subject = new ClaimsIdentity(claims),
                 Expires = DateTime.UtcNow.AddMinutes(15),
-                SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
+                SigningCredentials = new SigningCredentials(
+                    new SymmetricSecurityKey(key),
+                    SecurityAlgorithms.HmacSha256Signature),
+                Issuer = configuration["Jwt:Issuer"],
+                Audience = configuration["Jwt:Audience"]
             };
 
             SecurityToken token = tokenHandler.CreateToken(tokenDescriptor);

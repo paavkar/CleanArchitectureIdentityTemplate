@@ -19,7 +19,7 @@ You can install the template using the .nupkg file.
 Use the command
 
 ```
-dotnet new install .\PK.CleanArchitecture.Identity.1.0.0.nupkg
+dotnet new install .\PK.CleanArchitecture.Identity.1.0.1.nupkg
 ```
 
 You can check that the install was successful with the command
