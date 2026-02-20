@@ -2,8 +2,8 @@ name: Pack and Release Template
 
 on:
   push:
-    branches:
-      - main
+    tags:
+      - 'v*'
 
 jobs:
   pack-and-release:
@@ -24,11 +24,11 @@ jobs:
       - name: Pack template
         run: dotnet pack CleanIdentityTemplate.csproj -c Release -o ./nupkgs
 
-      - name: Create or update GitHub Release
+      - name: Create GitHub Release
         uses: softprops/action-gh-release@v1
         with:
-          tag_name: latest
-          name: "Latest build from main"
+          tag_name: ${{ github.ref_name }}
+          name: "Release ${{ github.ref_name }}"
           files: ./nupkgs/*.nupkg
           draft: false
           prerelease: false
