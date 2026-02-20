@@ -8,12 +8,13 @@
 
   <ItemGroup>
     <PackageReference Include="Dapper" Version="2.1.66" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="10.0.0" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="10.0.0">
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="10.0.3" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="10.0.3">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="Microsoft.Extensions.Caching.Hybrid" Version="10.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Caching.Hybrid" Version="10.3.0" />
+    <PackageReference Include="Microsoft.Extensions.Localization.Abstractions" Version="10.0.3" />
   </ItemGroup>
 
   <ItemGroup>
@@ -21,6 +22,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\CleanArchitectureIdentityTemplate.SharedKernel\CleanArchitectureIdentityTemplate.SharedKernel.csproj" />
     <ProjectReference Include="..\CleanArchitectureIdentityTemplate.Application\CleanArchitectureIdentityTemplate.Application.csproj" />
     <ProjectReference Include="..\CleanArchitectureIdentityTemplate.Domain\CleanArchitectureIdentityTemplate.Domain.csproj" />
   </ItemGroup>

@@ -4,8 +4,8 @@ namespace CleanArchitectureIdentityTemplate.Application.DTOs
 {
     public class LoginDto
     {
-        [Required]
-        public string EmailOrUsername { get; set; } = "";
+        public string? Email { get; set; }
+        public string? UserName { get; set; }
 
         [Required]
         public string Password { get; set; } = "";

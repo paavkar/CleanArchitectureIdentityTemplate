@@ -31,5 +31,17 @@
         }
       ]
     }
-  ]
+  ],
+  "symbols": {
+    "port": {
+      "type": "generated",
+      "generator": "port",
+      "replaces": "5099"
+    },
+    "httpsPort": {
+      "type": "generated",
+      "generator": "port",
+      "replaces": "7014"
+    }
+  }
 }
