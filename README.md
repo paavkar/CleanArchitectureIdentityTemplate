@@ -5,7 +5,8 @@
 This is a template solution for creating new .NET solutions that already use
 a Clean Architecture structure. The template also contains ASP.NET Core Identity
 scaffolding with roles. Along this, a service for authentication is included
-with a REST API that has endpoints for login, register, and refresh.
+with a REST API that has endpoints for login, register, and refresh. Support
+for setting up 2FA for user accounts is also present.
 The authentication is done with JWT.
 
 ## Requirements
@@ -35,6 +36,7 @@ After which you can create new projects with the CLI
 ```
 dotnet new clean-identity -n CleanIdentityTest --force
 ```
+
 `-n` denotes the name for the solution (and folder). As is in the example
 a new solution of name `CleanIdentityTest` was created with this command.
 `--force` is required as the command needs to rename the namespace used.
@@ -47,12 +49,14 @@ the following command
 ```
 dotnet new sln --name CleanIdentityTest
 ```
+
 The `--name` command takes the name of your project (in this example CleanIdentityTest).
 This creates a new .sln file which you need to migrate to .slnx file with the command
 
 ```
 dotnet sln .\CleanIdentityTest.sln migrate
 ```
+
 Again, use your project's solution name here.
 You can remove the old .sln file with
 
@@ -80,6 +84,44 @@ or app settings:
   "Jwt:Key": "<256_BIT_VALUE>",
   "Jwt:Issuer": "<YOUR_APPLICATION_NAME>",
   "Jwt:Audience": "<YOUR_APPLICATION_NAME>",
-  "ConnectionStrings:DefaultConnection": "<YOUR_DB_CONNECTION>"
+  "ConnectionStrings:DefaultConnection": "<YOUR_DB_CONNECTION>",
+  "EncryptionKeys": {
+  "Current": "<CURRENT_KEY_ID>",
+  "Values": {
+    "KEY_ID": "<32-CHAR-LONG-VALUE>"
+  }
+}
 }
 ```
+
+## Updating the database
+
+When you have set up the project with the required secret values, you need to update the
+database. This can be done with VS Package Manager Console or with dotnet ef CLI.
+
+Following commands use the example project name of `CleanIdentityTest`, replace that with
+your chosen project name.
+
+### VS Package Manager Console
+
+Using the VS Package Manager Console, the following command to create a new migration is
+
+`Add-Migration InitialCreate -Project CleanIdentityTest.Infrastructure -StartupProject CleanIdentityTest.WebAPI`
+
+The migration name using VS PMC is the first argument after `Add-Migration`.
+
+and then the command that updates the database structure
+
+`Update-Database -Project CleanIdentityTest.Infrastructure -StartupProject CleanIdentityTest.WebAPI`
+
+### dotnet ef CLI
+
+When using the dotnet ef CLI, the command to create migrations is
+
+`dotnet ef migrations add InitialCreate --project CleanIdentityTest.Infrastructure --startup-project CleanIdentityTest.WebAPI`
+
+The migration name using the dotnet ef CLI is the argument after `dotnet ef migrations add`.
+
+and to update the database with this migration
+
+`dotnet ef database update --project CleanIdentityTest.Infrastructure --startup-project CleanIdentityTest.WebAPI`

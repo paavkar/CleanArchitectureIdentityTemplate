@@ -18,6 +18,7 @@ namespace CleanArchitectureIdentityTemplate.WebAPI.Controllers
         IAuthService authService,
         IStringLocalizer<AppLocalization> localizer) : ControllerBase
     {
+        [EndpointName("register")]
         [HttpPost("register")]
         public async Task<IActionResult> Register(RegisterDto registerDto)
         {
@@ -47,6 +48,7 @@ namespace CleanArchitectureIdentityTemplate.WebAPI.Controllers
             return Ok(result);
         }
 
+        [EndpointName("login")]
         [HttpPost("login")]
         public async Task<IActionResult> Login(LoginDto loginDto)
         {
@@ -75,6 +77,7 @@ namespace CleanArchitectureIdentityTemplate.WebAPI.Controllers
             return Ok(result);
         }
 
+        [EndpointName("verify2fa")]
         [HttpPost("verify-2fa")]
         public async Task<IActionResult> VerifyTwoFactor([FromBody] TwoFactorDto twoFactorDto)
         {
@@ -103,6 +106,7 @@ namespace CleanArchitectureIdentityTemplate.WebAPI.Controllers
             return Ok(result);
         }
 
+        [EndpointName("setup2fa")]
         [Authorize]
         [HttpGet("setup-2fa")]
         public async Task<IActionResult> SetupTwoFactor()
@@ -115,6 +119,7 @@ namespace CleanArchitectureIdentityTemplate.WebAPI.Controllers
                 : Ok(result);
         }
 
+        [EndpointName("eable2fa")]
         [Authorize]
         [HttpPost("enable-2fa")]
         public async Task<IActionResult> EnableTwoFactor([FromBody] VerifyTwoFactorDto model)
@@ -128,6 +133,7 @@ namespace CleanArchitectureIdentityTemplate.WebAPI.Controllers
                 : Ok(result);
         }
 
+        [EndpointName("disable2fa")]
         [Authorize]
         [HttpPost("disable-2fa")]
         public async Task<IActionResult> DisableTwoFactor()
@@ -141,6 +147,7 @@ namespace CleanArchitectureIdentityTemplate.WebAPI.Controllers
                 : Ok(result);
         }
 
+        [EndpointName("refreshLogin")]
         [HttpPost("refresh")]
         public async Task<IActionResult> Refresh([FromBody] JwtRefreshRequest? request)
         {
@@ -186,6 +193,7 @@ namespace CleanArchitectureIdentityTemplate.WebAPI.Controllers
             return Ok(result);
         }
 
+        [EndpointName("revokeRefresh")]
         [HttpPost("revoke")]
         public async Task<IActionResult> Revoke([FromBody] JwtRefreshRequest? request)
         {

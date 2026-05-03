@@ -2,7 +2,7 @@
     <PropertyGroup>
         <TargetFramework>netstandard2.0</TargetFramework>
         <PackageId>PK.CleanArchitecture.Identity</PackageId>
-        <Version>1.1.0</Version>
+        <Version>1.2.0</Version>
         <Authors>Paavo Karppinen</Authors>
         <Description>Clean Architecture with Identity template</Description>
         <PackageType>Template</PackageType>
